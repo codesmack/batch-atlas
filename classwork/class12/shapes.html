@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Shape Page</title>
+    <style>
+        html,body
+        {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    <svg 
+    width="315px" 
+    height="300px" 
+    
+    >
+        <rect width="300px" 
+        y="10px"
+        x="10px"
+        height="50px" 
+        fill="orange"
+        stroke="orange"
+        stroke-width="1px"></rect>
+        <ellipse 
+        cx="150" cy="85" 
+        rx="20" 
+        ry="20" 
+        style="fill:white;stroke:blue;stroke-width:1px" />
+        <ellipse 
+        cx="150" cy="85" 
+        rx="5" 
+        ry="5" 
+        style="fill:blue;" />
+        <rect width="300px" 
+        y="110px"
+        x="10px"
+        height="50px" 
+        fill="green"
+        stroke="green"
+        stroke-width="1px"></rect>
+        SVG is not supported on your browser.
+    </svg>
+    <svg id="imgFlag"
+    width="301px" 
+    height="300px" 
+    >
+    
+        <rect
+        width="300px" 
+        height="200px" 
+        fill="#FFFFFF"
+        stroke="black"
+        stroke-width="0.3px"></rect>
+        <circle cx="147" 
+        cy="99" r="80"
+         fill="#D00000" />
+         <text x="150" y="110" 
+         font-size="40" 
+         text-anchor="middle"
+          fill="white">Japan</text>
+ 
+        
+        SVG is not supported on your browser.
+    </svg>
+    
+
+    
+</body>
+
+</html>
+<script>
+    function moveFlag()
+    {
+        let interval = setInterval(moveFlagElem,10);
+    }
+
+    function moveFlagElem()
+    {
+        console.log('in moveFlagElem');
+        const flag = document.getElementById("imgFlag");
+            if(flag.style.marginLeft == "")
+                flag.style.marginLeft = "10px";
+            else
+            {
+                let margin = parseInt(flag.style.marginLeft);
+                flag.style.marginLeft = (parseInt(flag.style.marginLeft) + 10)+ "px";
+            }
+    }
+</script>
+  

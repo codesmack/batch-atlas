@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 13</title>
+    <style>
+        li{
+            display: inline-block;
+        }
+
+        .links,
+        .linkscale,
+        .linkskew
+        {
+            color: white;
+            margin: 10px 2px;
+            padding: 10px;
+            display: inline-block;
+        }
+        .links:hover{
+            /* font-size: larger; */
+            background-color: darksalmon;
+            transform: rotate(-20deg);
+        }
+        .linkscale:hover{
+            /* font-size: larger; */
+            background-color: darksalmon;
+            transform: scale(1.2);
+        }
+
+        .linkskew:hover{
+            /* font-size: larger; */
+            background-color: darksalmon;
+            transform: skew(-20deg);
+        }
+
+        a{
+            color: crimson;
+        }
+
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: blueviolet;
+        }
+
+        .special
+        { 
+            transform: rotate(-90deg);
+            display: inline-block;
+        }
+        .box:hover{
+            transform: skew(-10deg);
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Css</h1>
+    <div style="background-color: black;">
+        <ul>
+            <li>
+                <a class="linkskew" href="#">Home</a>
+            </li>
+            <li>
+                <a class="linkscale" href="#" >About Us</a>
+            </li>
+            <li>
+                <a class="links" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+    
+    <a href="#" class="special">Yahooo</a>
+
+    <p id="lastChapter">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nam sit doloribus, eum quae ex. Dolor necessitatibus illo labore accusamus doloribus magnam ad vitae rerum deserunt autem, id consequuntur perferendis.
+    </p>
+</body>
+</html>
