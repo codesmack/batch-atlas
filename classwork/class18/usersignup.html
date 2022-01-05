@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        .center{
+            text-align: center;
+        }
+
+        .box{
+            width: 300px;
+            margin: auto;
+            margin-top: 10vh;
+        }
+        td{
+            padding: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset class="box center">
+        <div class="center">
+            <h1>User Signup Form</h1>
+        </div>
+        <form name="signupForm" action="home.html" method="get">
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td>
+                        <input type="text" name="username" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" name="name" id="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>
+                        <input type="number" name="age" id="age">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="center">
+                        <button onclick="onSubmit(event)">Plain Submit</button>
+                        <input onclick="onSubmit(event)" type="submit" id="btnSubmit">
+                        <input type="reset" value="Clear Form">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>
+<script>
+let l = console.log;
+function onSubmit(e){
+    //stop the postback
+    e.preventDefault();
+
+
+    //l(window.document.forms[0].elements);
+    l(document.forms[0].username.value);
+    document.forms[0].submit();
+}
+</script>

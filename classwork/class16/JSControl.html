@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Control Flow</title>
+</head>
+<body>
+    <input maxlength="10" type="number" name="" id="txtMobile">
+    <button onclick="onCheckClicked()">Check</button>
+    <p id="paraResult">
+
+    </p>
+</body>
+</html>
+
+<script>
+    console.clear();
+    let l = console.log;
+
+    //group 
+    //9 - airtel
+    //97 - airtel NB
+    //96 - airtel SB
+    //8 - jio
+    //7 - vodaphone
+    //if name start with M
+
+    
+function onCheckClicked(){
+    let paraResult = document.getElementById("paraResult");
+    let number = window.document.getElementById("txtMobile").value;
+    l(number);
+
+
+    if(number.charAt(0) == "9")
+    {
+        l("airtel number");
+        paraResult.innerText = "airtel number";
+
+        if(number.charAt(1) == "8")
+            paraResult.innerText = "airtel number - SB";
+        else if (number.charAt(1) == "7")
+            paraResult.innerText = "airtel number - NB";
+        else
+            paraResult.innerText = "airtel number - local";
+    }
+    else if(number.charAt(0) == "8")
+    {
+        l("jio number");
+        paraResult.innerText = "jio number";
+    }
+}
+</script>

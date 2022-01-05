@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test</title>
+
+</head>
+
+<body>
+    Name : <input id="txtName" type="number">
+    <br>
+    <button onclick="onSubmitClick()">Submit</button>
+    <p id="paraResult" >
+        
+    </p>
+</body>
+
+</html>
+
+
+<script>
+
+    function onSubmitClick() {
+        let para = document.getElementById("paraResult");
+        let num = document.getElementById("txtName").value;
+        let isEven = (num % 2 == 0);
+        if (isEven) {
+            para.innerText = "welcome to the party!"; 
+            console.log("welcome to the party!");
+        }
+        else {
+            //if odd number
+            para.innerText = "Sorry, you are odd one out!";
+            console.log("Sorry, you are odd one out!");
+
+        }
+    }
+
+    console.clear();
+let l = console.log;
+
+for(let i = 10;
+    i > 0;
+    i--)
+{
+  l("Loop No:" + i);
+  
+}
+
+
+</script>

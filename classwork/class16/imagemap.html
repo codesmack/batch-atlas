@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="padding: 0px;margin: 0px;">
+    <h1>Welcome to the Vinery</h1>
+    <img 
+    onclick="imgClicked(event)"
+    onmousedown="mouseClicked(event)"
+    usemap="#myMap"
+    height="450px"
+    width="650px"
+    src="https://images.unsplash.com/photo-1640607359697-a4efb6692bf7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" 
+    alt="">
+    
+    <map name="myMap">
+        <area shape="rect" 
+        coords="224,57,354,279" 
+        target="_blank"
+        style="background-color: cadetblue;"
+        href="http://www.vine.com" />
+        <area shape="circle" 
+        coords="493,221,80" 
+        target="_blank"
+        href="http://www.vine.com" />
+    </map>
+</body>
+</html>
+<script>
+    function imgClicked(e){
+        console.log(e.clientX + "," + e.clientY);
+        console.log(e.pageX + "," + e.pageY);
+    }
+    function mouseClicked(e){
+        console.log(e.clientX + "," + e.clientY);
+        console.log(e.pageX + "," + e.pageY);
+    }
+
+
+</script>

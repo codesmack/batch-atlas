@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                <input id="txtName" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Is Employed?
+            </td>
+            <td>
+                <input name="employed" type="radio" id="employedYes" checked>Yes
+                <input name="employed" type="radio" checked>No
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="onSubmitClicked()" >Submit</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    //object variable
+    let persons = [];
+
+    function onSubmitClicked(){
+
+        //craete object variable
+        let personOne = {
+                name: '',
+                isEmployed: false
+        };
+        
+        personOne.name = document.getElementById("txtName").value;
+        personOne.isEmployed = document.getElementById("employedYes").checked;
+
+        persons.push(personOne);
+        //console.log(persons);
+
+        window.localStorage.setItem("persons", persons);
+        window.sessionStorage.setItem("persons-count", persons.length);
+    }
+</script>
