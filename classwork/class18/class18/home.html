@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myH1"></h1>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        let userName = "Mike";
+        let queryString = window.location.search.replace("?","");
+
+        console.log('I received queryString as : ' + queryString);
+        let datas = queryString.split("&");
+        
+        userName = datas[0].split("=")[1];
+        let name = datas[1].split("=")[1];
+        let age = datas[2].split("=")[1];
+
+        console.log(name);
+        console.log(age);
+
+        if(parseInt(age) < 15)
+        {
+            document.body.style.background = "pink";
+        }
+        else
+        {
+            document.body.style.background = "orange";
+        }
+
+        document.getElementById("myH1").innerText = "Welcome, " + userName;
+    }
+</script>
