@@ -13,11 +13,26 @@
 <script>
     window.onload = function(){
         let userName = "Mike";
-        let name = window.location.search;
-        let data = name.split("&");
+        let queryString = window.location.search.replace("?","");
 
-        //override userName using queryString data
-        //your code...
+        console.log('I received queryString as : ' + queryString);
+        let datas = queryString.split("&");
+        
+        userName = datas[0].split("=")[1];
+        let name = datas[1].split("=")[1];
+        let age = datas[2].split("=")[1];
+
+        console.log(name);
+        console.log(age);
+
+        if(parseInt(age) < 15)
+        {
+            document.body.style.background = "pink";
+        }
+        else
+        {
+            document.body.style.background = "orange";
+        }
 
         document.getElementById("myH1").innerText = "Welcome, " + userName;
     }

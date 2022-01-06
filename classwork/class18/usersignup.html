@@ -26,33 +26,65 @@
 <body>
     <fieldset class="box center">
         <div class="center">
-            <h1>User Signup Form</h1>
+            <h1>Login Form</h1>
         </div>
-        <form name="signupForm" action="home.html" method="get">
+        <div>
+            <input type="radio" name="users" id="radioSi" onclick="SignIn()" checked>Sign In
+            <input type="radio" name="users" id="radioSu" onclick="SignUp()">Sign Up
+        </div>
+        <form id="signinForm" name="signinForm" action="home.html" method="get" >
             <table>
                 <tr>
                     <td>Username</td>
                     <td>
-                        <input type="text" name="username" id="username">
+                        <input type="text" required name="username" id="username">
                     </td>
                 </tr>
                 <tr>
-                    <td>Name</td>
+                    <td>Password</td>
                     <td>
-                        <input type="text" name="name" id="name">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Age</td>
-                    <td>
-                        <input type="number" name="age" id="age">
+                        <input type="password" required name="name" id="name">
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td class="center">
-                        <button onclick="onSubmit(event)">Plain Submit</button>
                         <input onclick="onSubmit(event)" type="submit" id="btnSubmit">
+                        <input type="reset" value="Clear Form">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <form name="signupForm" id="signupForm" action="home.html" method="get" style="display: none;" >
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td>
+                        <input type="text" required name="username" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" required name="name" id="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" required name="name" id="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>
+                        <input type="number" required name="age" id="age">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="center">
+                        <input onclick="onSignUpSubmit(event)" type="submit" id="btnSubmit">
                         <input type="reset" value="Clear Form">
                     </td>
                 </tr>
@@ -64,12 +96,31 @@
 <script>
 let l = console.log;
 function onSubmit(e){
-    //stop the postback
-    e.preventDefault();
-
-
-    //l(window.document.forms[0].elements);
-    l(document.forms[0].username.value);
-    document.forms[0].submit();
+    // //stop the postback
+    // e.preventDefault();
+    // //l(window.document.forms[0].elements);
+    // l(document.forms[0].username.value);
+    // document.forms[0].submit();
 }
+
+function SignUp()
+{
+    document.getElementById("signupForm").style.display = "block";
+    document.getElementById("signinForm").style.display = "none";
+}
+
+function SignIn()
+{
+    document.getElementById("signinForm").style.display = "block";
+    document.getElementById("signupForm").style.display = "none";
+}
+
+function onSignUpSubmit(e)
+{
+    if(document.getElementById("signupForm").checkValidity())
+    {
+        document.getElementById("signupForm").submit();
+    }
+}
+
 </script>
