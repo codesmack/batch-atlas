@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Rollover</title>
+    <style>
+        .imgContainer
+        {
+            height: 450px;
+            width: 400px;
+            position: relative;
+        }
+
+        .slider-images
+        {
+            height: 450px;
+            width: 400px;
+        }
+
+        .hide
+        {
+            display: none;
+        }
+
+        .show
+        {
+            display: block;
+        }
+
+        .imgText
+        {
+            text-align: center;
+            background-color: bisque;
+            color: blueviolet;
+            height: 100%; 
+            width: 100%;   
+            position: absolute;  
+            top: 0px;    
+        }
+
+        #imgOther1
+        {
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pet Adoption Site</h1>
+    <div class="imgContainer" onmouseleave="onMouseLeaveContainer(1)">
+        <img id="img1" onmouseover="onMouseOverImg(1)"
+        class="slider-images"
+    src="https://images.unsplash.com/photo-1596797882870-8c33deeac224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+     alt="">
+        <div id="imgText1" class="imgText hide" onclick="showOther(1)" >
+            <h1 style="margin-top: 40%;">Bruno</h1>
+            <p>
+                He is very shy and likes to play outdoor
+            </p>
+        </div>
+        <div id="imgOther1" class="imgText hide" >
+            <h1 style="margin-top: 40%;">Thanks for the interest!</h1>
+            <p>
+                We have added ...
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function onMouseOverImg(id)
+    {
+        console.log('onMouseOverImg fired');
+        document.getElementById("img" + id).style.display = "none";
+        document.getElementById("imgText" + id).classList.toggle("hide");
+    }
+
+    function onMouseLeaveContainer(id)
+    {
+        console.log('onMouseLeaveContainer fired');
+        document.getElementById("img" + id).style.display = "block";
+        document.getElementById("imgText" + id).classList.toggle("hide");
+    }
+
+    function showOther(id)
+    {
+        document.getElementById("imgText" + id).classList.toggle("hide");
+        document.getElementById("imgOther" + id).classList.toggle("hide");
+    }
+</script>
