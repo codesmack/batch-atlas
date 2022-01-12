@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider-images
+        {
+            height: 450px;
+            width: 400px;
+        }
+
+        .hide
+        {
+            display: none;
+        }
+
+        .show
+        {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div>
+        <img id="img0"
+            class="slider-images"
+        src="https://images.unsplash.com/photo-1641912194154-4a61a4b5b3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+         alt="">
+         <img id="img1"
+            class="slider-images hide"
+        src="https://images.unsplash.com/photo-1641921402984-80bb92e69e6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60"
+         alt="">
+         <img id="img2"
+         class="slider-images hide"
+     src="https://images.unsplash.com/photo-1641927130955-8e118b3d3306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60"
+      alt=""> 
+    </div>
+    <div>
+        <button onclick="onPreviousClick()">Previous</button>
+        <button onclick="onNextClick()">Next</button>
+    </div>
+</body>
+</html>
+<script>
+
+//local variable to track img index
+let imgIndex = 0;
+let l = console.log;
+
+function onPreviousClick()
+{
+    l('onPreviousClick fired');
+    l('imgIndex: ', imgIndex);
+    //Condition 0:
+    //2 to hide, img2 -> hide
+    //1 to show, img1 -> show
+
+    //Condition 1:
+    //1 to hide, img1 -> hide
+    //0 to show, img0 -> show
+
+    //Condition 2:
+    //0 to hide, img0 -> hide
+    //2 to show, img2 -> show
+
+}
+
+
+function onNextClick()
+{
+    l('onNextClick clicked');
+    l('imgIndex: ', imgIndex);
+
+    document.getElementById("img" + imgIndex).classList.add("hide");
+
+    if(imgIndex == 2)
+        imgIndex = 0;
+    else
+        imgIndex =  imgIndex + 1;
+
+    document.getElementById("img" + imgIndex).classList.toggle("hide");
+}
+
+</script>
