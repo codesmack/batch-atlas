@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 19</title>
+    <style>
+        .cool
+        {
+            color: red;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Js Advance Topics
+    </h1>
+    <h3>Timing Functions</h3>
+    <ul>
+        <li>setTimeout</li>
+        <li>setInterval</li>
+    </ul>
+    <label for="" id="lblSeconds">
+        Seconds: 
+    </label> 
+    <input type="number" id="txtTimer" value="5">
+    <button onclick="remindar()">Remind me in sometime</button>
+</body>
+</html>
+<script>
+    let l = console.log;
+
+    function remindar()
+    {
+        let lbl = document.getElementById("lblSeconds");
+        // l(lbl.style.color);
+        // if(lbl.style.color != "blue")
+        // {
+        //     lbl.style.color = "blue";
+        //     lbl.style.marginLeft = "20px";
+        // }
+            
+        // else
+        // {
+        //     lbl.style.color = "";
+        //     lbl.style.marginLeft = "";
+        // }
+        l(lbl.classList.toggle("cool"));
+
+        // let sec = document.getElementById("txtTimer").value;
+        // l('remindar is fired with sec: ' + sec);
+        // setTimeout(timerUp, sec * 1000)
+    }
+
+    function remindar_v1(sec)
+    {
+        l('remindar is fired with sec: ' + sec);
+        //window - global object
+        setTimeout(timerUp, sec * 1000)
+    }
+
+    function timerUp()
+    {
+        alert('timer is up!');
+    }
+
+</script>
