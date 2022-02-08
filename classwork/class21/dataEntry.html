@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry</title>
+    <style>
+table, td, tr {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 40%;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+    <h1>User Info</h1>
+    <p>
+        Name: <input type="text" id="txtName">
+    </p>
+    <p>
+        Age: <input type="number" id="txtAge">
+    </p>
+    <p>
+        <button onclick="AddUsers()">Submit</button>
+    </p>
+    <hr>
+    <h2>Users</h2>
+    <table id="userTable">
+        <!-- header row -->
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>
+               -
+            </td>
+        </tr>
+        <!-- data row -->
+        <!-- <tr>
+            <td>Mike</td>
+            <td>10</td>
+            <td>
+                <button>Del</button>
+            </td>
+        </tr> -->
+    </table>
+
+    <h3>
+        HW: Remove Row on click of delete button
+    </h3>
+</body>
+</html>
+<script>
+    let users = []; //Array
+    const tableID = "userTable";
+    const txtName = "txtName";
+    const txtAge = "txtAge";
+
+    function AddUsers()
+    {
+        let user = {}; //Object
+        user.name = document.getElementById(txtName).value;
+        user.age = document.getElementById(txtAge).value;
+        users.push(user);
+        console.log(users);
+
+        AddDataToTable(user);
+    }
+
+    function AddDataToTable(user)
+    {
+        //get table
+        let myTable = document.getElementById(tableID);
+
+        //create table row
+        let row = document.createElement("tr");
+        row.id = "tr_" + users.length;
+
+        //create table column - name
+        let tdName = document.createElement("td");
+        tdName.append(user.name);
+
+        let tdAge = document.createElement("td");
+        tdAge.append(user.age);
+
+        let tdEmpty = document.createElement("td");
+        tdEmpty.innerHTML = '<button>Del</button>';
+
+        //adding td to tr
+        row.appendChild(tdName);
+        row.appendChild(tdAge);
+        row.appendChild(tdEmpty);
+
+        //add tr to table
+        myTable.appendChild(row);
+    }
+</script>
