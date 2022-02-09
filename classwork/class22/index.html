@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            height: 450px;
+            width: 650px;
+            margin: auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            height: 100%;
+        }
+
+        .full{
+            width: 100%;
+            height: 100%;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; 
+    background-color: aqua;" id="container">
+        <div style="display: flex; align-items: center;">
+            <button onclick="onPrevious()">Previous</button>
+        </div>
+        <div class="full">
+            <img id="imgSource" src="../images/cat1.jfif" alt="Image will come here">
+        </div>
+        <div style="display: flex; align-items: center;">
+            <button onclick="onNext()">Next</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    //state
+    let imageIndex = 1;
+
+    function onNext() {
+        //html dom access
+        let img = document.getElementById("imgSource");
+        imageIndex = imageIndex + 1;
+        //after
+        if (imageIndex == 4)
+            imageIndex = 1;
+        //state change?
+        img.src = "../images/cat" + imageIndex + ".jfif";
+    }
+
+    function onPrevious() {
+        //html dom access
+        let img = document.getElementById("imgSource");
+
+
+        imageIndex = imageIndex - 1;
+
+        if (imageIndex == 0)
+            imageIndex = 3;
+
+        //state change?
+        img.src = "../images/cat" + imageIndex + ".jfif";
+
+    }
+</script>
