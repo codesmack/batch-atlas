@@ -1,0 +1,49 @@
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+html,body{
+    margin: 0;
+}
+
+.container{
+    margin: 10px;
+}
+
+.background-dark{
+    background-color: black;
+    color: white;
+}
+
+.background-cheerful{
+    background-color: yellow;
+    color: orangered;
+}
+
+p{
+    font-family: cursive;
+}
+
+.button-dark {
+    background-color: black;
+    color: white;
+}
+
+.button-colorful {
+    background-color: blueviolet;
+    color: aqua;
+}
+
+button{
+    font-size: large;
+    padding: 10px;
+}
+
+.button-sm{
+    font-size: 5px;
+}
+
+.button-md{
+    font-size: medium;
+}
+
