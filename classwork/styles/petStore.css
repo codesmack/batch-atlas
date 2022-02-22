@@ -1,0 +1,59 @@
+.center{
+    text-align: center;
+}
+.tags
+{
+    font-size: 3em;
+    color: purple;
+    cursor: pointer;
+    background-color: coral;
+    border-radius: 50%;
+    width: 70px;
+    text-align: center;
+}
+
+.links{
+    font-size: 20px;
+    color: purple;
+    margin-left: 15px;
+}
+nav
+{
+    margin-bottom: 2em;
+}
+
+.bigText{
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.slideContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+.petImages{
+    width: 500px;
+    height: 560px;
+}
+
+button
+{
+    font-size: 20px;
+    background-color: coral;
+    color: purple;
+    padding: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 2px;
+}
+
+input{
+    width: 235px;
+}
+
+table
+{
+    font-size: 20px;
+}
