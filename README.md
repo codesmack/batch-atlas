@@ -1,6 +1,3 @@
-# batch-atlas
-# How to - steps for installation
-
 # Part 1: (Node Installation)
 1. Go to URL https://nodejs.org/en/download/
    Download and Install - LTS - Windows Installer (.msi) - x64
