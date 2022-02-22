@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap - Try outs</title>
+</head>
+<body>
+    <h1>Single Variable</h1>
+    <button onclick="onPrevious()">Previous</button>
+    <input type="text" id="txtOne">
+    <input type="text" id="txtTwo">
+    <input type="text" id="txtThree">
+    <button onclick="onNext()">Next</button>
+</body>
+</html>
+<script>
+let imgArray = ['1.jpg','2.png','3.jpg', '4.jifi','5.jpg', '6.jifi']
+
+//state
+let index1 = 3;
+let imgCount = 3;
+
+//html
+const one = document.getElementById("txtOne");
+const two = document.getElementById("txtTwo");
+const three = document.getElementById("txtThree");
+
+//starting state
+one.value = "1";
+two.value = "2";
+three.value = "3";
+
+function onNext(){
+    index1++;
+    one.value = index1;  //1, 4
+    index1++;
+    two.value = index1;  //2, 5
+    index1++;
+    three.value = index1;  //2, 6
+}
+
+function onPrevious(){
+    console.log('prev');
+
+}
+
+function displayTextInUI(){
+    
+}
+
+//Set State A
+displayTextInUI();
+</script>
