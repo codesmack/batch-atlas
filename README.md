@@ -46,8 +46,8 @@
       
 # How to execute Typescript using Node ?
       
-1. Create a folder, c:\TypscriptFiles
-2. Create a file "Sample.ts" in folder c:\TypscriptFiles
+1. Create a folder, c:\TypescriptFiles
+2. Create a file "Sample.ts" in folder c:\TypescriptFiles
 3. Add following code in file "Sample.ts"
 <pre>
       <code>
@@ -79,7 +79,7 @@ p.printInfo();
 4. Open Command Propmpt and run cmd:<br>
    <pre>
       <code>
-      cd c:\TypscriptFiles
+      cd c:\TypescriptFiles
       tsc Sample.ts 
       node Sample.js
       </code>
