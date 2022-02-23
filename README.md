@@ -30,3 +30,16 @@
    <code>ng serve --open</code><br>
    <br>
    (Expected Output: First Angular app will get launched in browser at http://localhost:4200)
+      
+# How to install Typescript?
+      
+1. Ensure <b>Part 1: (Node Installation)</b> is completed.
+2. Open Command Propmpt and run cmd:<br>
+   <code>npm install typescript</code><br>
+   <br>
+   <br>
+3. Once Installation is over, run cmd:<br>
+   <code>tsc -version</code><br>
+   <br>
+  (Expected Output: Version 4.x.x  -- some version number)
+      
