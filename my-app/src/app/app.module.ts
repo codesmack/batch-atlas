@@ -24,6 +24,7 @@ import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
     FormsModule,
     RouterModule.forRoot([
       { path : "", component : DashboardComponent },
+      { path : "databinding", component : AppComponent },
       { path : "pipedemo", component : PipeDemoComponent },
       { path : "employee", component: EmployeeComponent },
       { path : "dashboard", component : DashboardComponent },
