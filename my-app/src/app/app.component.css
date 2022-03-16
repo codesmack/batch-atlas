@@ -1,3 +1,10 @@
-.container{
+.container-custom{
     background-color: aqua;
+}
+
+.high {
+    background-color: red;
+}
+.medium{
+    background-color: greenyellow;
 }

@@ -1,14 +1,60 @@
-<app-navbar></app-navbar>
-<p>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quibusdam debitis vitae quis incidunt obcaecati deleniti, suscipit natus a ipsum repellendus totam ad, possimus labore similique! Dolores sint corporis quibusdam?
-    Velit deleniti fuga asperiores error minus eaque recusandae, pariatur, minima quasi voluptatum porro repudiandae? Ab beatae veritatis odio rem ducimus aliquam, culpa atque eos necessitatibus amet commodi praesentium ea dolor.
-    Voluptatem quia amet pariatur exercitationem neque error quasi in dolore ad? Accusamus temporibus explicabo maxime recusandae perferendis at quidem aut molestiae ab aliquid numquam rem, reprehenderit dicta officia voluptatibus aperiam.
-    Veniam, laudantium vero quis quos totam quam sunt, aspernatur et quaerat odit aliquid inventore, voluptatem amet aperiam dicta ut atque iusto fugiat cum eligendi nobis facere a tempora tempore! Nisi.
-    Aliquam reprehenderit nisi eum magnam placeat harum assumenda excepturi commodi. Fugit doloremque corrupti harum adipisci molestias ducimus, sint libero iste rerum vero excepturi, dicta architecto ipsa, consequuntur voluptatum minima error!
-    Omnis, eveniet inventore! Voluptate quae nihil facere. Obcaecati ipsum eos eveniet ut quo architecto cupiditate perspiciatis accusamus ducimus non facilis unde, doloribus tempora soluta, eaque pariatur voluptatum error culpa dolorum?
-    Quas culpa aliquid eveniet molestiae minus nulla, quae rem corporis odio? Numquam beatae provident aspernatur veritatis vero corporis error possimus! Ex reiciendis architecto exercitationem voluptates, distinctio impedit asperiores similique magnam.
-    Nihil, obcaecati alias! Nisi quo provident nesciunt. Odio ex ab delectus et accusamus excepturi eius, pariatur consequuntur autem placeat nesciunt impedit dolorum est facere cupiditate harum doloribus explicabo quaerat aliquid?
-    Dolorum sed deleniti ipsum nam, nisi ipsa cupiditate illum impedit quaerat accusamus optio totam, repellat, fugiat minus. Nihil fuga hic quidem, asperiores soluta consequuntur eligendi rem. Cum vel labore quae.
-    At ab alias, pariatur vero autem ducimus ipsa quasi error, id atque impedit sed maxime, nisi enim quidem vitae eum velit reprehenderit eligendi quae. Suscipit ut culpa nobis quos delectus.
-</p>
-<app-footer></app-footer>
+<h2>Instructions:</h2>
+<ul>
+    <li>Change the cholesterol & hemoglobin reading</li>
+</ul>
+<hr class="my-5">
+<ol>
+    <li>
+        Your cholesterol levels reading: 
+        <input type="number" [ngClass]="(cholesterolReading > 15 ? 'high' : 'medium')"
+        [(ngModel)]="cholesterolReading">
+        <br>
+        <br>
+        <p *ngIf="(cholesterolReading <= 15)" [ngClass]="paraClass">
+            You are cholesterol level are just prefect ⭐⭐⭐
+        </p>
+        <p *ngIf="(cholesterolReading > 15)" [ngClass]="paraClass">
+            You are cholesterol level are dangerours 😟😟😟
+        </p>
+    </li>
+    <li>
+        Your hemoglobin levels readings:
+        <input type="number" [ngClass]="(hemoglobinReading > 15 ? 'high' : 'medium')"
+        [(ngModel)]="hemoglobinReading">
+        
+        <br>
+        <br>
+        
+        <p *ngIf="(hemoglobinReading <= 15)" [ngClass]="paraClass">
+            You are hemoglobin level are just prefect ⭐⭐⭐
+        </p>
+        <p *ngIf="(hemoglobinReading > 15)" [ngClass]="paraClass">
+            You are hemoglobin level are dangerours 😟😟😟
+        </p>
+    </li>
+</ol>
+
+<!-- 
+
+Font size <input type="number" [(ngModel)]="fontSize">
+Fontsize is {{fontSize}}
+<p [ngStyle]="defaultStyle" [ngClass]="defaultClass">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus commodi doloribus ex libero animi? Velit magni at voluptates dolor molestias. Minima assumenda omnis temporibus totam dolores eligendi tempora soluta voluptatum!
+</p> -->
+
+
+
+
+
+
+<!-- <h1 class="pt-5">Directives</h1>
+Your Readings (ngClass):
+<input type="number"  class="form-control"
+     id="exampleFormControlInput1">
+     <br>
+     <br>
+     <br>
+<div [ngStyle]="paraStyle" >
+   Using "ngStyle": Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eos expedita ipsa exercitationem impedit in odit fuga dolorum rerum sed, qui voluptas non ratione dicta inventore cumque, vel magnam veritatis?
+</div>
+<hr> -->
