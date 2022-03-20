@@ -43,7 +43,7 @@ app.use(corsInstance);
 # How to install Mysql2 npm package
 <pre>npm install --save mysql2</pre>
 
-## Running your First Query
+## Running your First Query (Add this code in index.js)
 
 <pre>
 // get the client
