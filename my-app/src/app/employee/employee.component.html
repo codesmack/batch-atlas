@@ -1,8 +1,8 @@
 <table>
     <tr>
         <td>
-            Specify Name:    
-            <input type="text" [(ngModel)]="emp.name" required >
+            Specify Name:
+            <input type="text" [(ngModel)]="emp.name" required>
         </td>
     </tr>
     <tr>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td>
-            <button (click)="onSubmit()"  >Submit</button>
+            <button (click)="onSubmit()">Submit</button>
         </td>
     </tr>
 </table>
@@ -40,23 +40,39 @@
             Address
         </td>
         <td>
-            
+            -
         </td>
     </tr>
     <tr *ngFor="let e of employees; let i = index">
         <td>
-            {{i + 1}}
+            <span [hidden]="(i == editIndex)">{{i + 1}}</span>
         </td>
         <td>
-            {{e.name | uppercase }}
+            <span [hidden]="(i == editIndex)">
+                {{e.name | uppercase }}
+            </span>
+            <input type="text" 
+                [(ngModel)]="employees[i].name"
+                [hidden]="!(i == editIndex)" >
         </td>
         <td>
-            {{e.age}}
-       </td>
-       <td>
-            {{e.address | titlecase}}
-       </td>
-   <td>
-</td>
+            <span [hidden]="(i == editIndex)">
+                {{e.age}}
+            </span>
+            <input type="text" [(ngModel)]="employees[i].age"
+            [hidden]="!(i == editIndex)">
+        </td>
+        <td>
+            <span [hidden]="(i == editIndex)">
+                {{e.address | titlecase}}
+            </span>
+            <input type="text" 
+            [(ngModel)]="employees[i].address"
+            [hidden]="!(i == editIndex)">
+        </td>
+        <td>
+            <button  (click)="onEdit(i)">{{(i == editIndex) ? 'Update' : 'Edit'}}</button>
+        </td>
+
     </tr>
 </table>

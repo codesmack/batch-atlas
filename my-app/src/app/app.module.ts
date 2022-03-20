@@ -41,11 +41,13 @@ import { EmpFormReactiveComponent } from './emp-form-reactive/emp-form-reactive.
       { path : "pipedemo", component : PipeDemoComponent },
       { path : "employee", component: EmployeeComponent },
       { path : "dashboard", component : DashboardComponent },
+      { path : "tempform", component : EmpFormTemplateComponent},
+      { path : "reactform", component : EmpFormReactiveComponent},
       { path : "login", component : LoginComponent }
     ])
   ],
   providers: [],
-  bootstrap: [EmpFormTemplateComponent, EmpFormReactiveComponent]
+  bootstrap: [HomeComponent]
 }
 )
 export class AppModule { }

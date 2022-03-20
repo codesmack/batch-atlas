@@ -1,17 +1,26 @@
-<!-- <form #empForm="ngForm" (ngSubmit)="onSubmit(empForm)">
+<form #empForm="ngForm" class="my-3" (ngSubmit)="onSubmit(empForm)">
     EmpID: <input  type="text" name="empId" [(ngModel)]="model.empid" #empid="ngModel"
     required
-    id="">
-    <span *ngIf="empid.invalid && !empid.pristine" class="text-danger" >EmpId is required</span>
+    id=""><span [ngStyle]="{ color : 'red'}">*</span>
+    <span *ngIf="submitted && empid.invalid" class="text-danger" >EmpId is required</span>
     <br>
-    Gender <input type="radio" name="gender" value="M" id="">Male
-    <input type="radio" name="gender" value="F" id="">Female<br>
-    City <select name="city" id="">
+    Gender <input type="radio" [(ngModel)]="model.gender" name="gender" value="M" id="">Male
+    <input type="radio" [(ngModel)]="model.gender" name="gender" value="F" id="">Female<br>
+    City <select name="city" id="" [(ngModel)]="model.city">
+        <option value="">Select an Option</option>
         <option value="B">Bangalore</option>
         <option value="C">Chennai</option>
         <option value="T">Tamil Nadu</option>
     </select>
     <br>
     <br>
-    <button type="submit" [disabled]="empForm.invalid"  >Submit</button>
-</form> -->
+    <button type="submit" class="me-1" [disabled]="chkForm.checked && empForm.invalid"  >Submit</button>
+    <button type="reset" class="me-1" (click)="empForm.reset()"   >Reset</button>
+    <br>
+</form>
+<input #chkForm ngModel class="me-1" type="checkbox">Disable Submit If Form not valid
+<br>
+<input  [(ngModel)]="showFormData" class="me-1" type="checkbox">Show Form Data
+<p *ngIf="showFormData">
+    {{empForm.value | json}}
+</p>

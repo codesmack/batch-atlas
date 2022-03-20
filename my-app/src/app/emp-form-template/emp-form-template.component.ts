@@ -9,9 +9,10 @@ import { EmployeeModel } from '../models/employee.model';
 })
 export class EmpFormTemplateComponent {
     model = new EmployeeModel();
-
-
+    submitted = false;
+    showFormData = true;
     onSubmit(empForm : NgForm){
+        this.submitted = true;
         console.log(empForm);
         console.log(empForm.value);
     }

@@ -1,4 +1,4 @@
-<form [formGroup]="employeeform" (ngSubmit)="onSubmit(employeeform)" >
+<form class="my-3" [formGroup]="employeeform" (ngSubmit)="onSubmit(employeeform)" >
     EmpID <input type="text" name="empId" formControlName="empId" id="">
     <span *ngIf="submitted && employeeform.get('empId')?.invalid" class="text-danger" >EmpId is required</span>
     <br>
@@ -13,3 +13,4 @@
     <br>
     <button>Submit</button>
 </form>
+<h6>{{employeeform.value | json }}</h6>

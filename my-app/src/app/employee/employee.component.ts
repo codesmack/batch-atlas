@@ -9,7 +9,8 @@ import { EmployeeService } from '../services/employee/employee.service';
 export class EmployeeComponent implements OnInit {
   hideTable = true;
   info = "";
-  
+  editIndex = -1;
+
   //collection of employees
   employees : EmployeeModel[] = [];
 
@@ -21,7 +22,12 @@ export class EmployeeComponent implements OnInit {
     this.employees = this.empService.getData();
   }
 
-  
+  onEdit(index : number){
+    if(this.editIndex == -1)
+        this.editIndex = index;
+    else
+        this.editIndex = -1;
+  }
 
   ngOnInit(): void {
    
@@ -29,12 +35,12 @@ export class EmployeeComponent implements OnInit {
 
   onSubmit(){
 
-    // console.log(this.emp);
-    // //add to array
-    // this.employees.push(this.emp);
-    // //reset model
-    // this.emp = new EmployeeModel();
-    // console.log(this.employees);
+    console.log(this.emp);
+    //add to array
+    this.employees.push(this.emp);
+    //reset model
+    this.emp = new EmployeeModel();
+    console.log(this.employees);
   }
 
 }

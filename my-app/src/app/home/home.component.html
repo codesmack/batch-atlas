@@ -4,6 +4,19 @@
     
     <a routerLink="pipedemo" class="me-3">Pipe Demo</a>
     <a routerLink="databinding" class="me-3">DataBinding Demo</a>
+
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Forms
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <li><a class="dropdown-item" 
+            routerLink="tempform">Template Form</a></li>
+          <li><a class="dropdown-item" 
+            routerLink="reactform">Reactive Form</a></li>
+        </ul>
+      </div>
+
     <a href="#" class="float-end" (click)="onSignout()">Signout, {{userName}}</a>
 </nav>
 <div class="container" style="height: 95vh;">
