@@ -4,4 +4,8 @@ export class EmployeeModel
     age = 0;
     address = '';
     skilsSet = '';
+    empid = '';
+    gender = '';
+    city = '';
+
 }

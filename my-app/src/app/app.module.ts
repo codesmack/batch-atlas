@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -8,6 +8,12 @@ import { EmployeeComponent } from './employee/employee.component';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { FirstComponent } from './compInteraction/first/first.component';
+import { SecondComponent } from './compInteraction/second/second.component';
+import { HighligterDirective } from './highligter.directive';
+import { CharCountPipe } from './custompipes/char-count.pipe';
+import { EmpFormTemplateComponent } from './emp-form-template/emp-form-template.component';
+import { EmpFormReactiveComponent } from './emp-form-reactive/emp-form-reactive.component';
 
 @NgModule(
   {
@@ -17,11 +23,18 @@ import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
     HomeComponent,
     EmployeeComponent,
     DashboardComponent,
-    PipeDemoComponent
+    PipeDemoComponent,
+    FirstComponent,
+    SecondComponent,
+    HighligterDirective,
+    CharCountPipe,
+    EmpFormTemplateComponent,
+    EmpFormReactiveComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path : "", component : DashboardComponent },
       { path : "databinding", component : AppComponent },
@@ -32,7 +45,7 @@ import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
     ])
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [EmpFormTemplateComponent, EmpFormReactiveComponent]
 }
 )
 export class AppModule { }
